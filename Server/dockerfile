@@ -1,0 +1,19 @@
+# Use an official Node.js runtime as a parent image
+FROM node:16
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the package.json and install dependencies
+COPY server/package*.json ./
+
+RUN npm install
+
+# Copy the rest of the backend app
+COPY server/ .
+
+# Expose port (adjust if necessary)
+EXPOSE 3000
+
+# Command to run the server
+CMD ["node", "server.js"]  # Replace with your main entry file, e.g., app.js or index.js
