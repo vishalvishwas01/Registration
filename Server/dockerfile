@@ -16,4 +16,4 @@ COPY server/ .
 EXPOSE 3000
 
 # Command to run the server
-CMD ["node", "server.js"]  # Replace with your main entry file, e.g., app.js or index.js
+CMD ["node", "index.js"] 
